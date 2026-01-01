@@ -1,0 +1,57 @@
+<!--StorePackage/store/store.wxml-->
+<!-- 背景图 -->
+<view class="store_bg_box">
+	<swiper autoplay="true" circular="true">
+		<block wx:for="{{storebg}}" wx:key="_id">
+			<swiper-item>
+				<image class="store_bg_img" src="{{item}}"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+<!-- 背景图 -->
+<!-- logo -->
+<view wx:for="{{StoreInfo}}" wx:key="_id" class="logo_wrap">
+	<image class="store_logo_img" src="{{item.storeLogo}}"></image>
+</view>
+<!-- logo -->
+<!-- 门店 -->
+<viwe wx:for="{{StoreInfo}}" wx:key="_id" class="store_wrap">
+	<view class="store_item"><text class="storeName">门店：{{item.storeName}}</text></view>
+
+	<view class="store_item"> <text class="manager">店长：{{item.manager}}</text></view>
+
+	<viwe class="store_item" data-number="{{item.phoneNumber}}" bindtap="jumpToCall">
+		<text class="mangPhone">电话：{{item.phoneNumber}}</text>
+	</viwe>
+</viwe>
+	<!-- 门店 -->
+
+	<!--底部导航 start -->
+	<view class="bottom_nav_box">
+		<view class="bottom_nav_item" bindtap="jumpToEmployee">
+			<view class="weixin">
+				<image src="../image/employee.png"></image>
+			</view>
+			<view>员工</view>
+		</view>
+		<view class="bottom_nav_item" bindtap="goIntro">
+			<view class="phone">
+				<image src="../image/intro.png"></image>
+			</view>
+			<view>简介</view>
+		</view>
+		<view class="bottom_nav_item" bindtap="goZhaopin">
+			<view class="phone">
+				<image src="../image/zhaopin.png"></image>
+			</view>
+			<view>招聘</view>
+		</view>
+		<view class="bottom_nav_item" bindtap="jumpToMap">
+			<view class="address">
+				<image src="../image/address.png"></image>
+			</view>
+			<view>地址</view>
+		</view>
+	</view>
+	<!--底部导航 end -->

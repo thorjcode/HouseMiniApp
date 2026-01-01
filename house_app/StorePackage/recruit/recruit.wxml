@@ -1,0 +1,26 @@
+<!--StorePackage/recruit/recruit.wxml-->
+<!-- 轮播图 -->
+<view class="swiper-box">
+	<swiper autoplay="true" circular="true">
+		<block wx:for="{{culturebg}}" wx:key="_id">
+			<swiper-item>
+				<image mode="heighFix" src="{{item}}"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<view>
+	<view class="title">诚聘英才</view>
+
+	<view class="title_box" wx:for="{{recruitInfo}}" wx:key="_id">
+		<view class="title_box_item"><text class="title_text" >待遇：</text>{{item.ration}}</view>
+		<view class="title_box_item"><text class="title_text" >上班时间：</text>{{item.worktime}}</view>
+		<view class="title_box_item"><text class="title_text" >岗位介绍：</text>{{item.postintro}}</view>
+		<view class="title_box_item"><text class="title_text" >负责人：</text>{{item.manager}}</view>
+		<viwe class="title_box_item" data-number="{{item.phone}}" bindtap="jumpToCall">
+			<text class="title_text" >电话：</text><text class="title_phone">{{item.phone}}</text>(可点击拨打)
+		</viwe>
+		<view class="title_box_item"><text class="title_text" >更新于：</text>{{item.updateTime}}</view>
+	</view>
+</view>

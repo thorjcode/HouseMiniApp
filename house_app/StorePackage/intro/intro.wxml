@@ -1,0 +1,18 @@
+<!--StorePackage/intro/intro.wxml-->
+<!-- 轮播图 -->
+<view class="swiper-box">
+	<swiper autoplay="true" circular="true">
+		<block wx:for="{{culturebg}}" wx:key="_id">
+			<swiper-item>
+				<image mode="heighFix" src="{{item}}"></image>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<view class="content-box">
+    <view class="content-title">公司简介</view>
+    <view class="content-text" style="color:grey;">
+        <text decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;{{introduce}}</text>
+    </view>
+</view>

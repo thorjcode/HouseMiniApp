@@ -1,0 +1,110 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/mypage/mypage",
+    "pages/collection/collection"
+
+  ],
+  "subpackages": [{
+      "root": "StorePackage",
+      "name": "StorePacket",
+      "pages": [
+        "store/store",
+        "storeMap/storeMap",
+        "recruit/recruit",
+        "staff/staff",
+        "intro/intro"
+      ]
+    },
+    {
+      "root": "Adminpackage",
+      "name": "adminpacket",
+      "pages": [
+        "BackstageHome/BackstageHome",
+        "AdminList/AdminList",
+        "addAdmin/addAdmin",
+        "EntrustList/EntrustList",
+        "EntrustDetail/EntrustDetail",
+        "PublishedDetail/PublishedDetail",
+        "StaffInfo/StaffInfo",
+        "StaffInfo/edit/edit",
+        "StaffInfo/edit/headImg/headImg",
+        "StaffInfo/edit/name/name",
+        "StaffInfo/edit/phone/phone",
+        "companyInfo/companyInfo",
+        "saleEntrust/saleEntrust",
+        "rentEntrust/rentEntrust"
+      ]
+    },
+    {
+      "root": "CalculatorPackage",
+      "name": "CalculatorPacket",
+      "pages": [
+        "calculator/calculator",
+        "calculatorlast/calculatorlast",
+        "rate/rate"
+      ]
+    },
+    {
+      "root": "housePackage",
+      "name": "housePacket",
+      "pages": [
+        "houseDetail/houseDetail",
+        "newHouse/newHouse",
+        "secondHouse/secondHouse",
+        "rentHouse/rentHouse"
+      ]
+    },
+    {
+      "root": "EchartsPackage",
+      "name": "EchartsPacket",
+      "pages": [
+        "housePrice/housePrice"
+      ]
+    }
+  ],
+  "usingComponents": {
+    "van-cell-group": "./dist/cell-group/index",
+    "van-divider": "./dist/divider/index",
+    "van-field": "./dist/field/index",
+    "van-notice-bar": "./dist/notice-bar/index",
+    "van-tab": "./dist/tab/index",
+    "van-tabs": "./dist/tabs/index",
+    "van-dropdown-menu": "./dist/dropdown-menu/index",
+    "van-dropdown-item": "./dist/dropdown-item/index"
+  },
+
+  "window": {
+    "navigationBarTitleText": "房产小程序",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#B0B0B0",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/images/home.png",
+        "selectedIconPath": "pages/images/home_select.png"
+      },
+
+      {
+        "pagePath": "pages/mypage/mypage",
+        "text": "我的",
+        "iconPath": "pages/images/me.png",
+        "selectedIconPath": "pages/images/me_select.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "导航需要"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

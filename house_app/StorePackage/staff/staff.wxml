@@ -1,0 +1,12 @@
+<!--StorePackage/staff/staff.wxml-->
+<view class="staff-card" wx:for='{{staffList}}' wx:key="*this" data-phone="{{item.phone}}"  bindlongtap="CallPhone">
+	<view class="icon">
+		<image src="{{item.staffImg}}"></image>
+	</view>
+	<view class="info-box">
+		<view class="info">姓名：{{item.name}}</view>
+		<view class="info">电话：{{item.phone}}</view>
+		<view class="note text-grey">说明：如需联系该员工,请长按点击名片。</view>
+	</view>
+</view>
+

@@ -1,0 +1,72 @@
+<!--housePackage/rentEntrust/rentEntrust.wxml-->
+<!-- 输入框 -->
+<view class="cu-form-group" wx:for='{{InputList}}' wx:key='input'>
+	<view class='title'>
+		<text decode="true">&nbsp;&nbsp;<text decode="true" style="color:#EE0A24;">*</text>{{item.title}}</text>
+	</view>
+	<input placeholder="{{item.placeholder}}"  id="{{item.id}}" type="{{item.type}}" maxlength='{{item.maxlength}}' style='color: #0080ff;' bindinput="InputData"></input>
+
+</view>
+
+<!-- 多列选择器-居室情况 -->
+<view class="cu-form-group padding-right-30rpx">
+	<view class='title'>
+		<text decode="true">&nbsp;&nbsp;<text decode="true" style="color:#EE0A24;">*</text>居室情况</text>
+	</view>
+	<picker mode="multiSelector" bindchange="houseRoomChange" value="{{HouseRoomSelected}}"
+		range="{{HouseRoomList}}">
+		<view class="picker {{FormData.houseRoom?'selected-color':'select-color'}}">
+			{{FormData.houseRoom?FormData.houseRoom:'点击选择'}}</view>
+	</picker>
+</view>
+
+<!-- 多列选择器-标签选择 -->
+<view class="cu-form-group padding-right-30rpx">
+	<view class='title'>
+		<text decode="true">&nbsp;&nbsp;<text decode="true" style="color:#EE0A24;">*</text>标签选择</text>
+	</view>
+	<picker mode="multiSelector" bindchange="houseTagsChange" value="{{HouseTagsSelected}}"
+		range="{{HouseTagsList}}">
+		<view class="picker {{FormData.houseTags?'selected-color':'select-color'}}">
+			{{FormData.houseTags?FormData.houseTags:'点击选择'}}</view>
+	</picker>
+</view>
+
+<!-- 单列选择器 -->
+<view class="cu-form-group margin-top padding-right-30rpx" wx:for='{{PickerList}}' wx:key='input'>
+	<view class='title'>
+		<text decode="true">&nbsp;&nbsp;<text decode="true" style="color:#EE0A24;">*</text>{{item.title}}</text>
+	</view>
+	<picker id="{{item.id}}" bindchange="PickerData" value="{{FormData[item.id]}}" data-pickerlist="{{item.pickerlist}}"
+		range="{{item.pickerlist}}">
+		<view class="picker {{FormData[item.id]?'selected-color':'select-color'}}">
+			{{FormData[item.id]==''?'点击选择':FormData[item.id]}}
+		</view>
+	</picker>
+</view>
+
+<!-- 照片上传 -->
+<view class="cu-form-group">
+	<view class='title'>
+		<text decode="true">&nbsp;&nbsp;<text decode="true"
+				style="color:#EE0A24;">*</text>房屋照片（{{imgList.length}}/5）</text>
+	</view>
+</view>
+<view class="cu-form-group" style="padding-left:5px;">
+	<view class="grid col-5 grid-square flex-sub">
+		<view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+			<image src='{{imgList[index]}}' mode='aspectFill'></image>
+			<view class="bg-red" catchtap="DelImg" data-index="{{index}}">
+				<text>x</text>
+			</view>
+		</view>
+		<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<5}}">
+			<image class="add_img" src="../images/add_img.png" ></image>
+		</view>
+	</view>
+</view>
+
+<view class="padding-10rpx flex flex-direction">
+	<button class='cu-btn lg submitbtn' form-type="SubmitEntrust" type="primary"
+		bindtap="Submit">确认提交</button>
+</view>

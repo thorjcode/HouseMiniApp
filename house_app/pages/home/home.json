@@ -1,0 +1,6 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "房产小程序.首页",
+    "enablePullDownRefresh": true,
+    "usingComponents": {}
+}

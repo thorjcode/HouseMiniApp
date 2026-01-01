@@ -1,0 +1,44 @@
+/* Adminpackage/EntrustDetail/EntrustDetail.wxss */
+
+/* 盒子 */
+.list_box {
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  background-color: #ffffff;
+}
+
+.tips {
+  font-size: 12px;
+  color: rgb(33, 207, 111);
+}
+
+.title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.desc {
+  margin: 10rpx;
+  font-size: 14px;
+  color: grey;
+}
+
+.text_red {
+  color: #e26843;
+}
+
+.text_blue {
+  color: #0081ff;
+}
+
+/* 按钮 */
+.button_box{
+  display: flex;
+  flex-direction: column;
+}
+.button_box button{
+  margin: 10rpx 0rpx;
+}
+

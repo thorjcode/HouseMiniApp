@@ -1,0 +1,70 @@
+<!--pages/home/home.wxml-->
+<!-- 轮播图 -->
+<view class="swiper_box">
+  <swiper autoplay="true" circular="true">
+    <block wx:for="{{home_banner}}" wx:key="_id">
+      <swiper-item>
+        <image mode="widthFix" src="{{item.banner}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 功能栏 -->
+<view class="select_box">
+  <!-- 新房 -->
+  <view bindtap="goNewhouse">
+    <image src="../images/newHouse.png"></image>
+  </view>
+  <!-- 二手房 -->
+  <view bindtap="goSecondhouse">
+    <image src="../images/secondHand.png"></image>
+  </view>
+  <!-- 出租房 -->
+  <view bindtap="goRenthouse">
+    <image src="../images/rentinghouse.png"></image>
+  </view>
+</view>
+
+<view class="select_box">
+  <!-- 房价 -->
+  <view data-url="../../EchartsPackage/housePrice/housePrice" bindtap="Navigate">
+    <image src="../images/housePrice.png"></image>
+  </view>
+  <!-- 计算器 -->
+  <view data-url="../../CalculatorPackage/calculator/calculator" bindtap="Navigate">
+    <image src="../images/calc.png"></image>
+  </view>
+  <!-- 门店 -->
+  <view data-url="../../StorePackage/store/store" bindtap="Navigate">
+    <image src="../images/shop.png"></image>
+  </view>
+</view>
+
+<!-- 公告栏 -->
+<view class="noticeBar_box">
+  <!-- dist组件滚动通知栏 -->
+  <van-notice-bar class="noticeBar" left-icon="volume-o" color="#181818;" backgroundColor="#ffffff" text="{{notice}}" />
+</view>
+
+<!-- 首页推荐 -->
+<view class="recommend_head_box">
+  <view class="recommend_head_text">精品推荐</view>
+</view>
+<!-- 推荐列表 -->
+<view class="card_box" wx:for="{{HouseList}}" wx:key="*this" data-id="{{item._id}}" bindtap="NavigateToDetail">
+  <view class="card">
+    <view class="card_left">
+      <image src="{{item.houseImg[0]}}"></image>
+      <view class="card_tag">推荐</view>
+    </view>
+    <view class="card_right">
+      <view class="card_title">{{item.FormData.houseName}}</view>
+      <view class="houseRoom">{{item.FormData.houseRoom}} <text class="area">{{item.FormData.area}}㎡</text></view>
+      <text class="totalPrice">{{item.FormData.totalPrice}}{{item.EntrustType=='sale'?'万 ':'元/月 '}}</text>
+      <text class="averagePrice">{{item.EntrustType=='sale'?item.FormData.averagePrice:''}}{{item.EntrustType=='sale'?' 元/㎡':''}}</text>
+      <view class="location">{{item.FormData.location}} {{item.FormData.HouseType}}</view>
+      <view class="houseTags">{{item.FormData.houseTags}}</view>
+    </view>
+  </view>
+</view>

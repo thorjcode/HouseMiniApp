@@ -1,0 +1,55 @@
+<!--pages/mypage/mypage.wxml-->
+<!-- 背景图 -->
+<view class="bg_box">
+	<image src="../images/mypagebg.png"></image>
+</view>
+
+<!-- 未登录 -->
+<view wx:if="{{!UserLogin}}" class="login_box" bindtap="getUserProfile">
+	<view class="userlogin">
+		<view>点击登录</view>
+		<view style="font-size: 12px; color:grey;margin-top: 5px;">需要先完成授权登录才能使用服务哟</view>
+	</view>
+</view>
+
+<!-- 已登录 -->
+<view wx:else class="login_box">
+	<view class="userAvatar_box" bindtap="BackstageDoor">
+		<image src="{{userInfo.avatarUrl}}"></image>
+	</view>
+	<view class="userlogin">
+		<view style="font-weight:bold;color:black;">欢迎：{{userInfo.nickName}}</view>
+		<view><text style="font-size: 10px;font-style: italic; color: gray;">微信用户</text></view>
+		<view><text style="font-size: 10px;font-style: italic; color: red;">Lv：</text><text style="font-size: 10px;font-style: italic; color: orange;">1</text></view>
+	</view>
+</view>
+
+<!-- 服务 -->
+<view class="service_box">
+	<view class="service_title">服务</view>
+	<view class="service_row" bindtap="goMycollection">
+		<view class="service_icon">
+			<image src="../images/mycollection.png"></image>
+		</view>
+		<view class="service_text">我的收藏</view>
+	</view>
+
+	<view class="service_row">
+		<view class="service_icon ">
+			<image src="../images/kefu.png"></image>
+		</view>
+		<view class="service_text">
+			<button open-type='contact' style="color:black;height:35px;line-height:35px;font-weight: lighter;padding:0;width:100%;border:none;background:#fff;font-size:14px;text-align:left;">在线客服</button>
+		</view>
+	</view>
+
+	<view  class="service_row" bindtap="exit">
+        <view class="service_icon">
+            <image src="../images/exit.png"></image>
+        </view>
+        <view class="service_text">退出登录</view>
+    </view>
+<!-- 动画 -->
+		<view wx:if="{{UserLogin}}" class="rainbow"></view>
+		<view wx:if="{{!UserLogin}}" class="rainy"></view>
+</view>

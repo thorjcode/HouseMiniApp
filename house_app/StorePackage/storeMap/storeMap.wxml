@@ -1,0 +1,5 @@
+<!--StorePackage/storeMap/storeMap.wxml-->
+<map class="map" markers="{{markers}}" data-marker="{{markers[0]}}" bindmarkertap="navRoad" longitude="{{longitude}}" latitude="{{latitude}}" scale="17" markers="{{markers}}" show-location></map>
+<view class="bottom_nav_box">点击图标导航</view>
+
+

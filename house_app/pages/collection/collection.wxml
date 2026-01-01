@@ -1,0 +1,14 @@
+<!--pages/collection/collection.wxml-->
+<view class="list_box" wx:for="{{ClloctionsList}}" wx:key='_id' data-doc="{{item._id}}" data-id="{{item.CollectionId}}"  bindtap="longPress">
+	<view class="item img_box">
+		<image src="{{item.houseImg[0]}}" ></image>
+	</view>
+	<view class="item info_box">
+		<view class="info_item">房源：{{item.houseName}}</view>
+		<view class="info_item">户型：{{item.houseRoom}}</view>
+		<view class="info_item">类型：{{item.HouseType}} {{item.EntrustType=='sale'?'(出售)':'(出租)'}}</view>
+		<view class="info_item">收藏时间：{{item.CollectionTime}}</view>
+
+	</view>
+</view>
+<view class="tips-box" wx:if='{{ClloctionsList.length==0}}'>暂时没有房源收藏~</view>

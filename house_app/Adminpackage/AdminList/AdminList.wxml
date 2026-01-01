@@ -1,0 +1,20 @@
+<!--Adminpackage/AdminList/AdminList.wxml-->
+
+<!-- 添加按钮 -->
+<view class="addAdmin" >
+	<image src="../images/add.png"  bindtap="addAdmin" ></image>
+</view>
+
+<!-- 管理员列表 -->
+<view class="card"  wx:for='{{adminList}}' wx:key="index" data-id="{{item._id}}" data-openid='{{item._openid}}' data-name="{{item.nickName}}"  bindlongtap="EditInfo">
+	<view class="icon">
+		<image src="{{item.avatarUrl}}"></image>
+	</view>
+	<view class="info-box">
+		<view class="info">{{index+1}}、{{item.nickName}} <text class="level {{item.level == '2'?'color_2':'color_1'}}">({{item.level =='2'?'超级管理员':'普通管理员'}})</text></view>
+		<view class="note ">添加人：{{item.operator}}</view>
+		<view class="note ">添加时间：{{item.addAdminTime}}</view>
+		<view class="note text-red">说明：请谨慎操作！</view>
+		<view>管理员：<switch data-id="{{item._id}}" data-level="{{item.level}}" checked="{{switchAdmin}}" bindchange="switchAdmin"/></view>
+	</view>
+</view>

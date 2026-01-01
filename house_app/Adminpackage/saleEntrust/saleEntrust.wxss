@@ -1,0 +1,38 @@
+/* housePackage/saleEntrust/saleEntrust.wxss */
+/* 选择器 */
+.select-color {
+  color: #ff8000;
+}
+
+.selected-color {
+  color: #0080ff;
+}
+
+.padding-right-30rpx {
+  padding-right: 30rpx;
+}
+
+.padding-10rpx {
+  padding: 10rpx;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-direction {
+  flex-direction: column;
+}
+
+/* 添加图片 */
+.add_img{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/* 提交按钮 */
+.submitbtn {
+  width: 100%;
+  color: #fff;
+  margin: 20px 0;
+}

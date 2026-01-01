@@ -1,0 +1,50 @@
+<!--Adminpackage/EntrustList/EntrustList.wxml-->
+<!-- 顶部导航栏 -->
+<view class="top_nav_box">
+  <view class="top_nav_item" data-type="unpublished" bindtap="ChangeTab">
+    <text class="{{isShowColor?'':'top_nav_color'}}">待审核<text class="text-red">{{unPutotal?unPutotal:''}}</text></text>
+  </view>
+  <view class="top_nav_item" data-type="published" bindtap="ChangeTab">
+    <text class="{{isShowColor?'top_nav_color':''}}">已发布<text class="text-red">{{Putotal?Putotal:''}}</text></text>
+  </view>
+</view>
+
+<!-- 房源列表 -->
+<view class="list_box">
+
+<!-- 待审核列表 -->
+  <view class="list_item" wx:if="{{unpublished}}" wx:for="{{unPublishList}}" wx:key='index' data-type="unpublished"
+    data-id="{{item['_id']}}" bindtap="Navigate">
+    <view class="title">{{index+1}}、{{item.FormData.houseName}}</view>
+    <view class="desc">发布人：{{item.FormData.name}}</view>
+    <view class="desc">电话：{{item.FormData.phone}}</view>
+    <view class="desc">房源名字：{{item.FormData.houseName}}</view>
+    <view class="desc">房源类型：{{item.FormData.HouseType}}</view>
+    <view class="desc">上传类型：<text class="text-blue">{{item.EntrustType=="sale"?'出售':'出租'}}</text></view>
+    <view class="desc">上传时间：<text class="text-red">{{item.updateTime}}</text></view>
+    <view class="desc">审核状态：<text class="text-red">待审核</text></view>
+    <view class="desc">房源地址：{{item.FormData.location}}</view>
+    <view class="desc text-blue">说明：点击卡片查看详情并进行审核发布</view>
+    <view class="desc" wx:if='{{unPublishList.length == 0}}'>暂时没有待审核的内容</view>
+  </view>
+
+<!-- 已发布列表 -->
+  <view class="list_item" wx:if="{{published}}" wx:for="{{publishList}}" wx:key='index' data-type="published"
+    data-id="{{item['_id']}}" bindtap="Navigate">
+    <view class="title">{{index+1}}、{{item.FormData.houseName}}</view>
+    <view class="desc">发布人：{{item.FormData.name}}</view>
+    <view class="desc">电话：{{item.FormData.phone}}</view>
+    <view class="desc">发布板块：{{item.plate}}</view>
+    <view class="desc">房源名字：{{item.FormData.houseName}}</view>
+    <view class="desc">房源类型：{{item.FormData.HouseType}}</view>
+    <view class="desc">发布类型：{{item.EntrustType=="sale"?'出售':'出租'}}</view>
+    <view class="desc">审核状态：<text class="text-blue">已审核</text></view>
+    <view class="desc">发布状态：<text class="text-blue">已发布：{{item.publishTime?item.publishTime:''}}</text></view>
+    <view class="desc">房源地址：{{item.FormData.location}}</view>
+    <view class="desc text-red">说明：点击卡片即可查看和修改发布详情；</view>
+    <view class="desc" wx:if='{{publishList.length==0}}'>暂时没有已发布的内容</view>
+  </view>
+  
+</view>
+
+

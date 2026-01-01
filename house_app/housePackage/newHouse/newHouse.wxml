@@ -1,0 +1,17 @@
+<!--housePackage/newHouse/newHouse.wxml-->
+
+<view class="card_box" wx:for="{{HouseList}}" wx:key="_id" data-id="{{item._id}}" bindtap="Navigate">
+    <view class="card">
+        <view class="card_left">
+            <image src="{{item.houseImg[0]}}"></image>
+        </view>
+        <view class="card_right">
+            <view class="card_title">{{item.FormData.houseName}}</view>
+            <view class="houseRoom">{{item.FormData.houseRoom}} <text class="area">{{item.FormData.area}}㎡</text></view>
+            <text class="totalPrice">{{item.FormData.totalPrice}}万 </text>
+            <text class="averagePrice">{{item.FormData.averagePrice}}元/㎡</text>
+            <view class="location">{{item.FormData.location}}</view>
+            <view class="houseTags">{{item.FormData.houseTags}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,73 @@
+<!--Adminpackage/StaffInfo/StaffInfo.wxml-->
+<!-- 提示信息 -->
+<view class="tips_box" wx:if='{{!showlist &&!showInput}}'>
+  <view class="tips_title">设置联系员工信息使用说明</view>
+  <view class="desc" style="color:#42A5F5;">使用前请先简单阅读以下使用说明：</view>
+  <view class="desc">1、设置员工信息将显示在门店的 “员工” 模块；</view>
+  <view class="desc">2、用户可直接点击员工的名片就能拨打电话联系；</view>
+  <view class="desc" style="color:#42A5F5;">【注意】：点击下面的加号添加新的员工信息。</view>
+</view>
+<!-- 打开输入框 -->
+<view class="add_box" bindtap="openInput" wx:if="{{!showInput}}">
+  <image src="../images/add.png"></image>
+</view>
+<!-- 员工卡片 -->
+<view wx:if="{{!showInput}}">
+  <view class="staff_card" wx:for='{{staffList}}' wx:key="_id" data-id="{{item._id}}" data-name="{{item.name}}" data-phone="{{item.phone}}" data-img="{{item.staffImg}}" bindlongtap="longPress">
+    <view class="head_img">
+      <image src="{{item.staffImg}}"></image>
+    </view>
+    <view class="info_box">
+      <view class="info">姓名：{{item.name}}</view>
+      <view class="info">电话：{{item.phone}}</view>
+      <view class="note text_grey">添加时间：{{item.updateTime}}</view>
+      <view class="note text_grey">说明：如需《修改》该员工信息,请《长按》该名片。</view>
+    </view>
+  </view>
+</view>
+<!-- 输入框 -->
+<view class="input_box" wx:if="{{showInput}}">
+  <view class="input_title">添加员工</view>
+  <view class="input_item">
+    姓 名：<input type="text" maxlength="6" placeholder="输入姓名" value="{{inputName}}" data-key="name" id="name" name="name" bindinput="inputData"></input>
+  </view>
+  <view class="input_item">
+    手 机：<input type="number" maxlength="11" placeholder="输入电话" value="{{inputPhone}}" data-key="phone" id="phone" name="phone" bindinput="inputData"></input>
+  </view>
+  <!-- 照片上传 -->
+  <view>
+    <view class="cu-form-group">
+      <view class='title'>
+        <text decode="true">&nbsp;&nbsp;上传头像（{{staffImg.length}}/1）</text>
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="grid col-1 grid-square flex-sub">
+
+        <!-- 上传图片按钮 -->
+        <view class="add-img" wx:if="{{isChooseImg}}" bindtap="chooseImg">
+          <image src="../images/add_img.png"></image>
+        </view>
+
+        <!-- 预览图片 -->
+        <view class="bg-img" wx:else bindtap="previewImg">
+          <image src='{{staffImg}}' mode='aspectFill'></image>
+
+          <!-- 删除图片 -->
+          <view class="bg-red" catchtap="deleteImg">
+            <text>x</text>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="input_button">
+    <!-- 关闭输入框 -->
+    <view class="bg_blue cancle_btn" bindtap="closeInput">取 消</view>
+    <!-- 确认提交 -->
+    <view class="bg_green confirm_btn" data-id="{{id}}" bindtap="confirmSubmit">确认添加</view>
+  </view>
+</view>
+<view class="tips_box desc" wx:if="{{nothing}}">前无古人后无来者，空空如也</view>

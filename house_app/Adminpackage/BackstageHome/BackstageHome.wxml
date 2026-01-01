@@ -1,0 +1,31 @@
+<!--九宫格-->
+<view class="sudoku_root">
+	<view class="sudoku_item" data-url="../EntrustList/EntrustList" bindtap="Navigate">
+		<image class="sudoku_item_img" src="../images/houseManage.png"></image>
+		<text class="sudoku_item_title">房源管理</text>
+	</view>
+	<view class="sudoku_item" data-url="../saleEntrust/saleEntrust" bindtap="Navigate">
+		<image class="sudoku_item_img" src="../images/saleHouse.png"></image>
+		<text class="sudoku_item_title">发布卖房</text>
+	</view>
+	<view class="sudoku_item" data-url="../rentEntrust/rentEntrust" bindtap="Navigate">
+		<image class="sudoku_item_img" src="../images/rentHouse.png"></image>
+		<text class="sudoku_item_title">发布租房</text>
+	</view>
+</view>
+
+<view class="sudoku_root" wx:if="{{superAdmin}}">
+	<view class="sudoku_item" data-url="../companyInfo/companyInfo" bindtap="Navigate">
+		<image class="sudoku_item_img" src="../images/company.png"></image>
+		<text class="sudoku_item_title">公司信息</text>
+	</view>
+	<view class="sudoku_item" data-url="../StaffInfo/StaffInfo" bindtap="Navigate">
+		<image class="sudoku_item_img" src="../images/staff.png"></image>
+		<text class="sudoku_item_title">员工信息</text>
+	</view>
+	<view class="sudoku_item" data-url="../AdminList/AdminList" bindtap="Navigate">
+		<image class="sudoku_item_img" src="../images/admin.png"></image>
+		<text class="sudoku_item_title">管理员</text>
+	</view>
+</view>
+<view class="bottom_title">后台管理系统</view>

@@ -1,0 +1,49 @@
+<!--Adminpackage/PublishedDetail/PublishedDetail.wxml-->
+<!-- 使用提示 -->
+<view class="list_box">
+  <view class="desc">提示：以下是已发布的房源详情。</view>
+  <view class="desc text_blue" style="color:#ff0080;">如需删除该房源信息,请查看本页面的底部。</view>
+</view>
+
+<!-- 房源信息 -->
+<view class="list_box" wx:for="{{houseInfo}}" wx:key='key'>
+  <view class="title">房源信息</view>
+  <view class="desc">发布人：<text class="text_blue">{{item.FormData.name}}</text></view>
+  <view class="desc">电话：<text class="text_blue">{{item.FormData.phone}}</text></view>
+  <view class="desc">房源名字：<text class="text_blue">{{item.FormData.houseName}}</text></view>
+  <view class="desc">房源朝向：<text class="text_blue">{{item.FormData.Invoice}}</text></view>
+  <view class="desc">房源楼层：<text class="text_blue">{{item.FormData.floor}}</text></view>
+  <view class="desc">房源装修：<text class="text_blue">{{item.FormData.decorate}}</text></view>
+  <view class="desc">房源面积：<text class="text_blue">{{item.FormData.area}}</text><text class="desc">（㎡）</text></view>
+  <view class="desc">房源价格：<text class="text_blue">{{item.FormData.totalPrice}}</text><text class="desc">{{item.EntrustType == 'sale'? '（万）' : '（元/月）'}}</text></view>
+  <view class="desc">房源类型：<text class="text_blue">{{item.FormData.HouseType}}</text></view>
+  <view class="desc">房源地址：<text class="text_blue">{{item.FormData.location}}</text></view>
+  <view class="desc">房源简介：<text class="text_blue">{{item.FormData.houseintro}}</text></view>
+  <view class="desc">{{item.EntrustType=='sale'?'交房时间：':''}}<text class="text_blue">{{item.FormData.maketime}}</text></view>
+  <view class="desc">上传时间：<text class="text_blue">{{item.updateTime}}</text></view>
+</view>
+
+<!-- 发布状态 -->
+<view class="list_box">
+  <view class="title">审核发布信息：</view>
+  <view class="desc">发布时间：<text class="text_red">{{houseInfo[0].publishTime}}</text></view>
+  <view class="desc">房源状态：<text class="text_red">{{houseInfo[0].publishTime?'已审核':'待审核'}} {{houseInfo[0].publish?'已发布':'未发布'}}</text></view>
+</view>
+<view class="list_box">
+  <view class="title">发布到的板块: <text class="text_blue">{{houseInfo[0].plate}}</text></view>
+</view>
+
+<!-- 房源图片 -->
+<view class="list_box">
+  <view class="desc">发布人上传的照片：( {{houseImg.length}}张 )</view>
+  <view class="grid col-5 grid-square flex-sub">
+    <view class="bg-img" wx:for="{{houseImg}}" wx:key="index" bindtap="ViewImage" data-url="{{houseImg[index]}}">
+      <image mode='aspectFill' src='{{houseImg[index]}}'></image>
+    </view>
+  </view>
+</view>
+
+<!-- 按钮 -->
+<view class="button_box">
+  <button style="background:red; color: white;" bindtap="deleteshowModal">删除房源</button>
+</view>

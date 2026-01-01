@@ -1,0 +1,60 @@
+<!--Adminpackage/EntrustDetail/EntrustDetail.wxml-->
+
+<!-- 步骤1 -->
+<view wx:if="{{step==1}}">
+  <!-- 使用提示 -->
+  <view class="list_box">
+    <text decode="true" class="tips">【提示】</text>
+    <text decode="true" class="desc">\n 1、请检查上传的详细委托内容,如检查没有问题。 \n 2、请下拉至底部,点击“下一步”,按照提示操作即可。</text>
+  </view>
+
+  <!-- 房源信息 -->
+  <view class="list_box" wx:for="{{houseInfo}}" wx:key='key'>
+    <view class="title">房源信息</view>
+    <view class="desc">负责人：<text class="text_blue">{{item.FormData.name}}</text></view>
+    <view class="desc">电话：<text class="text_blue">{{item.FormData.phone}}</text></view>
+    <view class="desc">房源名字：<text class="text_blue">{{item.FormData.houseName}}</text></view>
+    <view class="desc">房源朝向：<text class="text_blue">{{item.FormData.Invoice}}</text></view>
+    <view class="desc">房源楼层：<text class="text_blue">{{item.FormData.floor}}</text></view>
+    <view class="desc">房源装修：<text class="text_blue">{{item.FormData.decorate}}</text></view>
+    <view class="desc">房源面积：<text class="text_blue">{{item.FormData.area}}</text><text class="desc">（㎡）</text></view>
+    <view class="desc">房源价格：<text class="text_blue">{{item.FormData.totalPrice}}</text><text class="desc">{{item.EntrustType == 'sale'? '（万）' : '（元/月）'}}</text></view>
+    <view class="desc">房源类型：<text class="text_blue">{{item.FormData.HouseType}}</text></view>
+    <view class="desc">房源地址：<text class="text_blue">{{item.FormData.location}}</text></view>
+    <view class="desc">房源简介：<text class="text_blue">{{item.FormData.houseintro}}</text></view>
+    <view class="desc">{{item.EntrustType=='sale'?'交房时间：':''}}<text class="text_blue">{{item.FormData.maketime}}</text></view>
+    <view class="desc">上传时间：<text class="text_blue">{{item.updateTime}}</text></view>
+  </view>
+
+  <!-- 房源图片 -->
+  <view class="list_box">
+    <view class="desc">发布人上传的照片：( {{houseImg.length}}张 )</view>
+    <view class="grid col-5 grid-square flex-sub">
+      <view class="bg-img" wx:for="{{houseImg}}" wx:key="index" bindtap="ViewImage" data-url="{{houseImg[index]}}">
+        <image mode='aspectFill' src='{{houseImg[index]}}'></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="button_box">
+    <button type="primary" bindtap="nextStep">下一步</button>
+    <button style="background:red; color: white;" bindtap="deleteshowModal">删除</button>
+  </view>
+</view>
+
+<!-- 步骤2 -->
+<view wx:if="{{step==2}}">
+<!-- 选择发布的板块 -->
+  <view class="list_box">
+    <view class="title">设置发布到的板块</view>
+    <view decode="true" class="tips">【提示】
+      <text class="desc">\n 请选择 <text class="tips">新房</text>、<text class="tips">二手房</text>、<text class="tips">出租房</text>、板块进行发布</text>
+    </view>
+    <view wx:for="{{houseInfo}}" wx:key='key'>
+      <view class="desc">参考信息：<text class="text-red">{{item.FormData['HouseType']}}</text></view>
+    </view>
+  </view>
+  <button type="primary" wx:if='{{!plate}}' bindtap="SelectPlate">点击选择</button>
+  <button type="primary" wx:if='{{plate}}' bindtap="DoPublishing">{{plate}}</button>
+</view>

@@ -1,0 +1,43 @@
+<!--Adminpackage/companyInfo/companyInfo.wxml-->
+
+<view class="list_box">
+	<view class="title">公司介绍(共 {{CompanyData.introduce.length?CompanyData.introduce.length:0}}/500 字)</view>
+	<view class="desc" style="color:#42A5F5;margin-top:10px;">该文案将用于在公司简介页面进行展示,不超过500字。</view>
+	<view class="desc">上次编辑：{{CompanyData.editer}}</view>
+	<view class="desc">上次更新：{{CompanyData.updateTime}}</view>
+
+	<view style="margin:15px 0px; ">
+		<textarea placeholder="公司介绍文案" value='{{CompanyData.introduce}}' data-key="introduce"  maxlength='500' auto-height='true' bindinput="InputData" />
+	</view>
+
+	<view class="title">首页滚动公告(共 {{CompanyData.notice.length?CompanyData.notice.length:0}}/100 字)</view>
+	<view class="desc" style="color:#42A5F5;margin-top:10px;">该文案将用于在首页的滚动公告栏进行展示,不超过100字。</view>
+	<view style="margin-top:15px;">
+		<textarea placeholder="首页公告" value='{{CompanyData.notice}}' data-key="notice" maxlength='100' auto-height='true' bindinput="InputData"/>
+	</view>
+
+	<view class="title">招聘信息</view>
+	<view class="desc" style="color:#42A5F5;margin-top:10px;">该文案将用于在公司招聘进行展示</view>
+	<view style="margin-top:15px;">
+		<view class="title">负责人</view>
+		<input type="text" placeholder="负责人" value='{{CompanyData.manager}}' data-key="manager" maxlength='10'  bindinput="InputData"/>
+	</view>
+	<view style="margin-top:15px;">
+		<view class="title">电话</view>
+		<input type="number" placeholder="电话" value='{{CompanyData.phone}}' data-key="phone" maxlength='11'  bindinput="InputData"/>
+	</view>
+	<view style="margin-top:15px;">
+		<view class="title">待遇</view>
+		<textarea placeholder="待遇" value='{{CompanyData.ration}}' data-key="ration" maxlength='100' auto-height='true' bindinput="InputData"/>
+	</view>
+	<view style="margin-top:15px;">
+		<view class="title">上班时间</view>
+		<textarea placeholder="上班时间" value='{{CompanyData.worktime}}' data-key="worktime" maxlength='100' auto-height='true' bindinput="InputData"/>
+	</view>
+	<view style="margin-top:15px;">
+		<view class="title">岗位介绍</view>
+		<textarea placeholder="岗位介绍" value='{{CompanyData.postintro}}' data-key="postintro" maxlength='100' auto-height='true' bindinput="InputData"/>
+	</view>
+</view>
+
+<button bindtap="submitData" type="primary">更新数据</button>

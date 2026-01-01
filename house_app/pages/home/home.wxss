@@ -1,0 +1,136 @@
+/* pages/home/home.wxss */
+
+/*轮播图 */
+.swiper_box image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 功能栏 */
+.select_box {
+  width: 100%;
+  display: inline-flex;
+  text-align: center;
+  padding: 10rpx 0rpx;
+  background-color: #fff;
+}
+
+.select_box view {
+  width: 212rpx;
+  height: 197rpx;
+  margin-left: 28.5rpx;
+}
+
+.select_box image {
+  width: 212rpx;
+  height: 197rpx;
+}
+
+/* 公告 */
+.noticeBar_box {
+  height: 70rpx;
+}
+
+/* 推荐头部 */
+.recommend_head_box {
+  height: 80rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.recommend_head_text {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 15px;
+  font-weight: bold;
+  padding-left: 16rpx;
+}
+
+/* 推荐列表 */
+.card_box {
+  position: relative;
+  box-sizing: border-box;
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  margin-top: 20rpx;
+  border-radius: 20rpx;
+  background-color: #ffffff;
+}
+
+.card {
+  display: flex;
+}
+
+.card_left {
+  width: 35%;
+  height: 200rpx;
+  display: inline-block;
+}
+
+.card_left image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+/* 推荐标签 */
+.card_tag {
+  position: absolute;
+  top: 4rpx;
+  left: 0;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  line-height: normal;
+  padding: 0.2em 0.5em;
+  color: #fff;
+  font-size: 11px;
+  border-radius: 0.2em;
+  border-color: currentColor;
+  border-radius: 0.2em * 2;
+  border-radius: 0 999px 999px 0;
+  padding-right: 0.7em;
+  background-color: #ee0a24;
+}
+
+.card_right {
+  width: 60%;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.card_title {
+  margin-top: 5rpx;
+  font-size: 15px;
+  font-weight: bold;
+  color: green;
+}
+
+.houseRoom {
+  font-size: 13px;
+}
+
+.area {
+  font-size: 10px;
+}
+
+.totalPrice {
+  font-size: 15px;
+  color: coral;
+
+}
+
+.averagePrice {
+  font-size: 12px;
+
+}
+
+.location {
+  font-size: 12px;
+
+}
+
+.houseTags {
+  font-size: 10px;
+  margin-bottom: 5rpx;
+}

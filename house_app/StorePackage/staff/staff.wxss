@@ -1,0 +1,49 @@
+/* StorePackage/staff/staff.wxss */
+.bg-blue {
+  background-color: #42A5F5;
+}
+
+.bg-green {
+  background-color: #42f5ec;
+}
+
+.text-grey {
+  color: grey;
+}
+
+.staff-card {
+  margin: 10rpx 30rpx;
+  padding: 16rpx;
+  border-radius: 10rpx;
+  display: flex;
+  background-color: #fff;
+}
+
+.icon {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+
+.icon image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.info-box {
+  margin-left: 20rpx;
+}
+
+.info{
+  font-size: 28rpx;
+  height: 70rpx;
+  font-weight: bold;
+  line-height: 70rpx;
+}
+
+.note{
+  height: 20rpx;
+  font-size: 20rpx;
+  line-height: 20rpx;
+}

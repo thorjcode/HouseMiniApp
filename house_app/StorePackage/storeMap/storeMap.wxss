@@ -1,0 +1,15 @@
+/* StorePackage/storeMap/storeMap.wxss */
+.map{
+	width: 100%;
+	height: 100vh;
+}
+.bottom_nav_box {
+	width: 100%;
+	display: flex;
+	position: fixed;
+	flex-direction: column;
+	align-items: center;
+	bottom: 0;
+	background-color: gainsboro;
+
+}

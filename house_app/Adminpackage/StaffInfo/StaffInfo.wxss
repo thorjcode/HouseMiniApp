@@ -1,0 +1,159 @@
+page {
+    width: 100%;
+    height: 100%;
+}
+
+/* 提示信息 */
+.tips_box {
+    margin: 10rpx 30rpx;
+    padding: 20rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+}
+
+.tips_title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.desc {
+    font-size: 12px;
+    color: grey;
+}
+
+/* 提示信息 */
+
+/* 添加按钮 */
+.add_box {
+    margin: 10rpx 30rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    padding: 10rpx;
+    background-color: #fff;
+}
+
+.add_box image {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+/* 添加按钮 */
+
+
+/* 员工卡片 */
+.staff_card {
+    margin: 10rpx 30rpx;
+    padding: 16rpx;
+    border-radius: 10rpx;
+    display: flex;
+    background-color: #fff;
+}
+
+.head_img {
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.head_img image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.info_box {
+    margin-left: 20rpx;
+}
+
+.info {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.note {
+    font-size: 10px;
+}
+
+.text_grey {
+    color: grey;
+}
+
+/* 员工卡片 */
+
+
+/* 输入框 */
+.input_box {
+    margin: 10rpx 30rpx;
+    padding: 60rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+}
+
+.input_title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40rpx;
+}
+
+.input_item {
+    height: 80rpx;
+    line-height: 80rpx;
+    display: inline-flex;
+}
+.input_item label{
+    display: inline-flex;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.input_item input {
+    padding: 10rpx;
+    border-bottom: 1px #42A5F5 solid;
+}
+
+.input_desc {
+    margin: 40rpx 0rpx;
+    font-size: 14px;
+    color: grey;
+}
+
+/* 输入框 */
+
+
+/* 按钮 */
+.input_button {
+    width: 100%;
+    height: 80rpx;
+    display: inline-flex;
+    color: #fff;
+}
+
+.input_button view {
+    width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.cancle_btn {
+    border-top-left-radius: 10rpx;
+    border-bottom-left-radius: 10rpx;
+}
+
+.confirm_btn {
+    border-top-right-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+}
+
+.bg_blue {
+    background-color: #42A5F5;
+}
+
+.bg_green {
+    background-color: green;
+}
+
+/* 按钮 */

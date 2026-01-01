@@ -1,0 +1,23 @@
+<!--pages/edit/edit.wxml-->
+<view class="edit_box">
+  <view style="color:#42A5F5;" bindtap="close">返回</view>
+  <view class="edit_title">修改员工信息</view>
+    <view class="edit_item" data-id="{{id}}" bindtap="navigateToName">
+      <text>修改昵称：</text><text style="color: grey;">{{name}}</text>
+    </view>
+
+    <view class="edit_item" data-id="{{id}}" bindtap="navigateToPhone">
+      <text>修改电话：</text><text style="color: grey;">{{phone}}</text>
+    </view>
+
+    <view class="cu-form-group" data-id="{{id}}" bindtap="navigateToImg">
+      <view class="grid col-1 grid-square flex-sub">
+        <!-- 预览图片 -->
+        <view class="bg-img">
+          <image src='{{staffImg}}' mode='aspectFill'></image>
+        </view>
+      </view>
+    </view>
+
+  <view style="font-size: 12px;color:#42A5F5;">【提示】:点击跳转修改</view>
+</view>
