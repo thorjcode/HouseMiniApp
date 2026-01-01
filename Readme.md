@@ -1,4 +1,5 @@
 # 项目名：房产小程序
+B站视频连接 https://www.bilibili.com/video/BV1PB4y1s7nX/?share_source=copy_web&vd_source=652b50647b3da3ba324d79d31cc81632
 ### 房产、租房类小程序
 ### 数据库---云开发
 ## 导入 配置过程
